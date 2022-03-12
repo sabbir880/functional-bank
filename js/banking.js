@@ -1,8 +1,19 @@
-document.getElementById('deposite-btn').addEventListener('click' , function(){
-    const depositeInput = document.getElementById('deposite-input');
+function getInputValue (id){
+    const depositeInput = document.getElementById(id);
     const depositeAmountText = depositeInput.value;
     const depositeAmount =parseFloat(depositeAmountText);
-    console.log(depositeAmount)
+
+     // clear deposite field 
+     depositeInput.value = '';
+
+    return depositeAmount;
+};
+
+
+
+document.getElementById('deposite-btn').addEventListener('click' , function(){
+
+      const depositeAmount =getInputValue('deposite-input');
 
     // get privious deposite amount 
     const depositeTotal = document.getElementById('deposite-total');
@@ -14,21 +25,15 @@ document.getElementById('deposite-btn').addEventListener('click' , function(){
     const balancTotal  = document.getElementById('balanc-total');
     const balanceTotalText = balancTotal.innerText;
     const priviousBalanceTotal =parseFloat(balanceTotalText);
-
     balancTotal.innerText = priviousBalanceTotal + depositeAmount;
-
-    // clear deposite field 
-    depositeInput.value = '';
 
 });
 
 
 // withdraw amount 
 document.getElementById('Withdraw-btn').addEventListener('click' , function(){
-    const WithdrawInput = document.getElementById('Withdraw-input');
-    const withdrawText = WithdrawInput.value;
-    const withdrawAmount = parseFloat(withdrawText);
-    console.log(withdrawAmount);
+
+    const withdrawAmount =getInputValue('Withdraw-input');
 
     // get previuous withdrawAmount 
     const WithdrawTotal = document.getElementById('Withdraw-total');
@@ -42,6 +47,4 @@ document.getElementById('Withdraw-btn').addEventListener('click' , function(){
     const priviousBalanceTotal =parseFloat(balanceTotalText);
     balancTotal.innerText = priviousBalanceTotal - withdrawAmount;
 
-    // clear withDrawInput field 
-    WithdrawInput.innerText = '';
 })

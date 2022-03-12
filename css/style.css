@@ -63,7 +63,7 @@ div p{
     border-radius: 5px ;
 }
 .calculation{
-    background-color: rgba(40, 185, 64, 0.507);
+    /* background-color: rgba(40, 185, 64, 0.507); */
     margin: 10px;
     padding: 10px 70px;
     border-radius: 5px ;
@@ -78,4 +78,16 @@ div p{
     border: 2px solid skyblue;
     border-radius: 5px;
     color: aliceblue;
+}
+#deposite{
+
+    background-color: rgba(185, 40, 59, 0.267);
+}
+#withdraw{
+   
+    background-color: rgba(40, 185, 64, 0.349);
+}
+#balance{
+    background-color: rgba(132, 40, 185, 0.301);
+
 }

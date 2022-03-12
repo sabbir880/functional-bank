@@ -1,50 +1,48 @@
-function getInputValue (id){
-    const depositeInput = document.getElementById(id);
-    const depositeAmountText = depositeInput.value;
-    const depositeAmount =parseFloat(depositeAmountText);
-
-     // clear deposite field 
-     depositeInput.value = '';
-
-    return depositeAmount;
+function getInputValue (InputId){
+    const inputField = document.getElementById(InputId);
+    const inputFieldText = inputField.value;
+    const inputAmount =parseFloat(inputFieldText);
+    // clear deposite field 
+    inputField.value = '';
+    return inputAmount;
 };
-
-
-
-document.getElementById('deposite-btn').addEventListener('click' , function(){
-
-      const depositeAmount =getInputValue('deposite-input');
-
-    // get privious deposite amount 
-    const depositeTotal = document.getElementById('deposite-total');
-    const depsiteTotaltext = depositeTotal.innerText;
-    const priviousDepositeAmount =parseFloat(depsiteTotaltext)
-    depositeTotal.innerText = priviousDepositeAmount + depositeAmount;
-
-    // updated blance 
+function updateInputValue(Total ,amount){
+    const totalElement = document.getElementById(Total);
+    const totalAmountText = totalElement.innerText;
+    const priviousDepositeAmount =parseFloat(totalAmountText)
+    totalElement.innerText = priviousDepositeAmount + amount;
+}
+function currrentBalance(){
     const balancTotal  = document.getElementById('balanc-total');
     const balanceTotalText = balancTotal.innerText;
     const priviousBalanceTotal =parseFloat(balanceTotalText);
-    balancTotal.innerText = priviousBalanceTotal + depositeAmount;
-
+    return priviousBalanceTotal;
+}
+function updatedBalance(amount, issAdd){
+    const balancTotal  = document.getElementById('balanc-total');
+    const priviousBalanceTotal = currrentBalance()
+    if(issAdd == true){
+        balancTotal.innerText = priviousBalanceTotal + amount;
+    }
+    else{
+        balancTotal.innerText = priviousBalanceTotal - amount;
+    }
+}
+// deposite
+document.getElementById('deposite-btn').addEventListener('click' , function(){
+    const depositeAmount = getInputValue('deposite-input');
+    if(depositeAmount > 0){
+        updateInputValue('deposite-total' , depositeAmount)
+        updatedBalance(depositeAmount , true);
+    }
 });
-
-
 // withdraw amount 
 document.getElementById('Withdraw-btn').addEventListener('click' , function(){
 
-    const withdrawAmount =getInputValue('Withdraw-input');
-
-    // get previuous withdrawAmount 
-    const WithdrawTotal = document.getElementById('Withdraw-total');
-    const withdrawTotalText = WithdrawTotal.innerText;
-    const previousWtithDraw = parseFloat(withdrawTotalText);
-    WithdrawTotal.innerText =  previousWtithDraw + withdrawAmount ;
-
-    // balancTotal 
-    const balancTotal  = document.getElementById('balanc-total');
-    const balanceTotalText = balancTotal.innerText;
-    const priviousBalanceTotal =parseFloat(balanceTotalText);
-    balancTotal.innerText = priviousBalanceTotal - withdrawAmount;
-
+    const withdrawAmount = getInputValue('Withdraw-input');
+    const currrentBalanc = currrentBalance();
+    if(withdrawAmount > 0 && withdrawAmount < currrentBalanc){
+        updateInputValue('Withdraw-total' , withdrawAmount)
+        updatedBalance(withdrawAmount , false);
+    }
 })

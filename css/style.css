@@ -1,0 +1,81 @@
+body{
+    background-color: rgb(69, 125, 128);
+}
+h1{
+    color: white;
+    text-align: center;
+}
+.container{
+    width: 600px;
+    margin: auto;
+    background-color:rgba(211, 135, 127, 0.438) ;
+    padding: 50px;
+    border-radius: 5px
+}
+.input-field{
+    display: block;
+    padding: 8px 40px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+}
+#submit-btn{
+    margin-left: 12px;
+    padding: 5px 23px;
+    background-color: chocolate;
+    font-weight: 600;
+    font-size: 15px;
+    border: 2px solid skyblue;
+    border-radius: 5px;
+    color: aliceblue;
+}
+
+h2{
+    color: beige;
+    margin-left: 5px;
+}
+div p{
+    color: rgb(255, 0, 0);
+    font-size: 20px;
+    font-weight: 800;
+    margin-left: 15px;
+    background-color: aliceblue;
+    text-align: center;
+    /* display: inline-block; */
+    /* padding: 5px; */
+    border-radius: 5px;
+    width: 200px;
+}
+
+
+/* banking style  */
+.banking-section{
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+.money-section{
+    background-color: rgba(16, 37, 37, 0.384);
+    margin: 10px;
+    padding: 50px;
+    border-radius: 5px ;
+}
+.calculation{
+    background-color: rgba(40, 185, 64, 0.507);
+    margin: 10px;
+    padding: 10px 70px;
+    border-radius: 5px ;
+    color: aliceblue;
+}
+.money-btn{
+    margin-left: 12px;
+    padding: 5px 23px;
+    background-color: rgba(2, 85, 78, 0.555);
+    font-weight: 600;
+    font-size: 15px;
+    border: 2px solid skyblue;
+    border-radius: 5px;
+    color: aliceblue;
+}

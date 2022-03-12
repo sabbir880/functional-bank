@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banking</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>Wellcome To Banking Site !!!</h1>
+    <!-- money calclulation  -->
+    <section class="banking-section">
+        <div class="calculation">
+            <h2>Depsite</h2>
+            <h2>$<span id="deposite-total">0</span></h2>
+        </div>
+        <div class="calculation">
+            <h2>Withdraw</h2>
+            <h2>$<span id="Withdraw-total">0</span></h2>
+        </div>
+        <div class="calculation">
+            <h2>Balance</h2>
+            <h2>$<span id="balanc-total">1200</span></h2>
+        </div>
+    </section>
+
+    <!-- input field  -->
+    <section class="banking-section">
+        <div class="money-section">
+            <h2>Please Deposite</h2>
+            <input id="deposite-input" class="input-field" type="text" placeholder="Depsite Your amount">
+            <button id="deposite-btn" class="money-btn">Depsite</button>
+        </div>
+        <div class="money-section">
+            <h2>Please Withdraw</h2>
+            <input id="Withdraw-input" class="input-field" type="text" placeholder="Withdraw do you want">
+            <button id="Withdraw-btn" class="money-btn">Withdraw</button>
+        </div>
+    </section>
+
+    <script src="js/banking.js"></script>
+</body>
+</html>
